@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import cardApi from '../services/Api';
-import CardBlock from '../common/components/CardBlock/CardBlock';
+import CardBlock from '../common/components/CardBlock';
 
 const App = () => {
   const [searchValue, setSearchValue] = useState('');

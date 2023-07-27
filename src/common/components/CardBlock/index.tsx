@@ -1,4 +1,4 @@
-import './CardBlock.css';
+import './index.css';
 
 const CardBlock = (props: any) => {
   return (
