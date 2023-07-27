@@ -24,6 +24,7 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: space-around;
+  margin: 0 10px;
 }
 
 .search-value {
