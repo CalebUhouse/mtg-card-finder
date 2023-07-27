@@ -20,17 +20,28 @@ const App = () => {
       <header className="App-header">
         <form onSubmit={(e) => e.preventDefault()}>
           <input
+            className="search-value"
             type="text"
             placeholder="Enter Name of Card"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <button onClick={() => getCardByName(searchValue)}>Search</button>
+          <button
+            className="search-value"
+            onClick={() => getCardByName(searchValue)}
+          >
+            Search
+          </button>
         </form>
         <div className="results-container">
           <h1>Cards:</h1>
           <p>Number of Cards Shown:</p>
-          <input className="number-displayed" type="number" value={numberDisplayed} />
+          <input
+            className="number-displayed"
+            type="number"
+            value={numberDisplayed}
+            onChange={(e) => setNumberDisplayed(parseInt(e.target.value))}
+          />
           <div className="card-block-container">
             {cardResults.data?.cards.slice(0, numberDisplayed).map((card) => (
               <CardBlock cardData={card} />
