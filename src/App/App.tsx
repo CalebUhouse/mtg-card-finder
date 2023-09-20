@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.css';
-import cardApi from '../services/Api';
-import CardBlock from '../common/components/CardBlock';
+import React, { useState } from "react";
+import "./App.css";
+import cardApi from "../services/Api";
+import CardBlock from "../common/components/CardBlock";
 
 const App = () => {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [cardResults, setCardResults] = useState({ data: { cards: [] } });
   const [numberDisplayed, setNumberDisplayed] = useState(5);
 
@@ -43,9 +43,11 @@ const App = () => {
               onChange={(e) => setNumberDisplayed(parseInt(e.target.value))}
             />
             <div className="card-block-container">
-              {cardResults.data?.cards.slice(0, numberDisplayed).map((card, index) => (
-                <CardBlock key={index} cardData={card} />
-              ))}
+              {cardResults.data?.cards
+                .slice(0, numberDisplayed)
+                .map((card, index) => (
+                  <CardBlock key={index} cardData={card} />
+                ))}
             </div>
           </div>
         </div>
