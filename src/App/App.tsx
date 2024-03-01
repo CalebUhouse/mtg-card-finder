@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import "./App.css";
-import cardApi from "../services/Api";
-import CardBlock from "../common/components/CardBlock";
+import React, { useState } from 'react'
+import './App.css'
+import cardApi from '../services/Api'
+import CardBlock from '../common/components/CardBlock'
 
 const App = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [cardResults, setCardResults] = useState({ data: { cards: [] } });
-  const [numberDisplayed, setNumberDisplayed] = useState(5);
+  const [searchValue, setSearchValue] = useState('')
+  const [cardResults, setCardResults] = useState({ data: { cards: [] } })
+  const [numberDisplayed, setNumberDisplayed] = useState(5)
 
   const getCardByName = (cardName: string) => {
     cardApi.get(`/cards?name=${cardName}`).then((response) => {
-      setCardResults(response);
-    });
-  };
+      setCardResults(response)
+    })
+  }
 
   return (
     <div className="App">
@@ -53,7 +53,7 @@ const App = () => {
         </div>
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
